@@ -20,8 +20,7 @@ def checkMongoConnectivity():
     dmongoPwd = p_enc_type.decrypt(pwd).decode("utf-8")
     
     try:
-        mongoClient  = pymongo.MongoClient("localhost",27017)
-        #mongoClient = pymongo.MongoClient("mongodb+srv://"+dmongoUser+":"+dmongoPwd+"@cluster0.cv48i.mongodb.net/NYTimes?retryWrites=true&w=majority")
+        mongoClient = pymongo.MongoClient("mongodb+srv://"+dmongoUser+":"+dmongoPwd+"@cluster0.cv48i.mongodb.net/NYTimes?retryWrites=true&w=majority")
     except ConnectionFailure:
         print("Failed to connect to database")
         return "Service Error: Unexpectd Error occured while processing your request HTTP 503 Service Unavailable"
