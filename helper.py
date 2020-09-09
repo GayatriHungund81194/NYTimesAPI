@@ -66,7 +66,7 @@ def insertBookReview(collection,params):
     try:
         collection.insert_one(params)
         print("Data insertion successful")
-        return "Success: Review Submitted Successfully!! HTTP 200 OK"
+        return "Success: Review Submitted Successfully!! HTTP 201 OK"
     except CollectionInvalid:
         print("Invalid Collection")
         return "Request Error: Could not query the collection. "
