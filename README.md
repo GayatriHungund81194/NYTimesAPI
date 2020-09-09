@@ -21,7 +21,7 @@ https://documenter.getpostman.com/view/8870976/TVCjy6QF
 
 4. Postman - It is very important to run and test the API developed, hence, postman is used to generate documentation and test the API. Following are the screenshots of testing the API using Postman:
 
-![github-small](https://github.com/GayatriHungund81194/pics/blob/master/APITest.gif) ![github-small]
+![github-small](https://github.com/GayatriHungund81194/pics/blob/master/APITest.png) ![github-small]
 
 ### Steps to execute the code on local environment
 Excute the following commands inorder to execute the code on a local environment:
