@@ -9,7 +9,6 @@ import secret
 
 # The following method checks the connectivity to remote cloud MongoDB cluster and throws error in case of connection problems.
 def checkMongoConnectivity():
-    
     uname = bytes(secret.mongoUser, 'utf-8')
     key = bytes("xJoZAbtudAAnDnm8FBh-d3pIvTEargxQNpbb6JFiZ1g=", 'utf-8')
     enc_type = Fernet(key)
@@ -21,7 +20,8 @@ def checkMongoConnectivity():
     dmongoPwd = p_enc_type.decrypt(pwd).decode("utf-8")
     
     try:
-        mongoClient = pymongo.MongoClient("mongodb+srv://"+dmongoUser+":"+dmongoPwd+"@cluster0.cv48i.mongodb.net/NYTimes?retryWrites=true&w=majority")
+        mongoClient  = pymongo.MongoClient("localhost",27017)
+        #mongoClient = pymongo.MongoClient("mongodb+srv://"+dmongoUser+":"+dmongoPwd+"@cluster0.cv48i.mongodb.net/NYTimes?retryWrites=true&w=majority")
     except ConnectionFailure:
         print("Failed to connect to database")
         return "Service Error: Unexpectd Error occured while processing your request HTTP 503 Service Unavailable"
@@ -57,7 +57,7 @@ def retrieveSpecificBookReviews(collection,bookName):
 
 # The following method is used to validate the parameters sent as request payload.
 def checkParams(params):
-    if (params==None or params['bookName']==None or params['bookAuthor'] or params['bookReview']==None or params['bookImage']==None):
+    if (params==None or params['name']==None or params['author'] or params['review']==None or params['link']==None):
         print("Bad Request: The name of request parameters should be as per documentation")
         return "Bad Request: Request parameter name not found HTTP 400 Bad Request"
 
