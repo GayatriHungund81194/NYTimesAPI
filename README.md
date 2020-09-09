@@ -6,7 +6,4 @@ https://sheltered-caverns-61168.herokuapp.com/
 Following is the link to API documentation that includes sample requests and responses for better understanding.
 
 ### Technology Stack used to create the application:
-![github-small](https://github.com/GayatriHungund81194/pics/blob/master/py.gif) ![github-small]
-![github-small](https://github.com/GayatriHungund81194/pics/blob/master/flask.gif) ![github-small]
-![github-small](https://github.com/GayatriHungund81194/pics/blob/master/heroku.gif) ![github-small]
-![github-small](https://github.com/GayatriHungund81194/pics/blob/master/postman.gif) ![github-small]
+1. Python - The coding laguage used to develop the backend is Python and the entire application is developed in virtual environment. All the dependencies are listed             in the file "requirements.txt" thus making it easy for the user to run the application in virtual environment easily without being worried aabout the               dependencies.
