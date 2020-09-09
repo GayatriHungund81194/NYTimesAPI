@@ -1,17 +1,21 @@
+# API creation for submitting book reviews for NYTimes using Python, MongoDB, Flask, and HTML.
+# Author: Gayatri Milind Hungund.
 from flask import Flask, render_template
 from flask_restful import Api, Resource, reqparse
-import random
-import pymongo 
-from pymongo.errors import ConnectionFailure, CollectionInvalid
+from cryptography.fernet import Fernet
 import secret
 import helper
 
 app = Flask(__name__)
 api = Api(app)
 
+#Simple first welcome page to showcase a link to documentation on API usage.
 @app.route("/")
 def hello():
     return render_template("home.html")
+
+# HTTP GET method to retrieve book reviews for the user as per user request.
+# The following GET method can retrieve aall book reviews or reviews for a particular book as per useer request.
 class Books(Resource):
     def get(self):
         reviewList = list()
@@ -34,6 +38,9 @@ class Books(Resource):
 
 api.add_resource(Books,"/getBooks","/getBooks")
 
+
+# HTTP POST method to add a book review as per user input.
+# the user enters 4 prameters namely: bookName, bookAuthor, bookReview, bookImage and data is inserted into MongoDB.
 class BookReviews(Resource):
     def post(self):
         reviewList = list()
